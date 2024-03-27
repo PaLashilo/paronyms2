@@ -1,2 +1,3 @@
-wandb_secrets.txt
+wandb_secret.txt
 /venv
+/wandb
