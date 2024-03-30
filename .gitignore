@@ -3,3 +3,5 @@ wandb_secret.txt
 /venv
 /wandb
 /Data
+
+/__pycache__
