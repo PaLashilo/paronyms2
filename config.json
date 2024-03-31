@@ -1,14 +1,14 @@
 {
     "nn": {
-        "treshold": 0.5,
-        "layers": [96, 32, 8, 1],
-        "activations": ["relu", "relu", "relu", "sigmoid"],
+        "treshold": 0.52,
+        "layers": [96, 64, 32, 8, 1],
+        "activations": ["relu", "relu", "relu", "relu", "sigmoid"],
         "epochs": 100,
         "batch_size": 16,
         "optimizer": "adam"
     }, 
     "catboost": {
-
+        "treshold": 0.5
     },
     "data_path": "Data//paronym.csv",
     "data_url": "https://ru-paronym.ru"
