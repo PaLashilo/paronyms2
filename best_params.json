@@ -1,3 +1,1 @@
-{
-    "params": null
-}
+{"learning_rate": 0.011289064280955217, "depth": 7, "l2_leaf_reg": 0.5808384667318421, "bagging_temperature": 0.09136846123232852}
