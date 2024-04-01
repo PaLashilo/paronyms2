@@ -1,16 +1,21 @@
 {
     "logging": 1, 
+
+    "data_path": "Data//paronym.csv",
+    "data_url": "https://ru-paronym.ru",
+
+    "pca_n_components": 150,
+
     "nn": {
-        "treshold": 0.52,
-        "layers": [96, 64, 32, 8, 1],
-        "activations": ["relu", "relu", "relu", "relu", "sigmoid"],
+        "treshold": 0.5,
+        "layers": [96, 32, 8, 1],
+        "activations": ["relu", "relu", "relu", "sigmoid"],
         "epochs": 100,
-        "batch_size": 16,
-        "lr": 0.0005
+        "batch_size": 8,
+        "lr": 0.001
     }, 
     "catboost": {
-        "treshold": 0.5
-    },
-    "data_path": "Data//paronym.csv",
-    "data_url": "https://ru-paronym.ru"
+        "treshold": 0.5,
+        "n_trials": 10
+    }
 }
