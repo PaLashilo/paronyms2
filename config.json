@@ -3,6 +3,7 @@
 
     "data_path": "Data//paronym.csv",
     "data_url": "https://ru-paronym.ru",
+    "bins_directory": "inference/inference_binaries",
 
     "pca_n_components": 150,
 
@@ -16,6 +17,6 @@
     }, 
     "catboost": {
         "treshold": 0.5,
-        "n_trials": 10
+        "n_trials": 100
     }
 }
