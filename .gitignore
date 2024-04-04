@@ -7,4 +7,4 @@ wandb_secret.txt
 /__pycache__
 /catboost_info
 
-/inference/inference_binaries
+/inference_binaries

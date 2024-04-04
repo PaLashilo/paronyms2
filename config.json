@@ -1,9 +1,9 @@
 {
-    "logging": 1, 
+    "logging": 0, 
 
     "data_path": "Data//paronym.csv",
     "data_url": "https://ru-paronym.ru",
-    "bins_directory": "inference/inference_binaries",
+    "bins_directory": "inference_binaries",
 
     "pca_n_components": 150,
 

@@ -14,15 +14,10 @@ import pickle
 import pymorphy2
 import Levenshtein
 import gensim.downloader
-import json
 from os import path
 
-# конфигурация
-with open('config.json', 'r') as file:
-    config = json.load(file)
-
-inference_path = config["bins_directory"]
-pca_n_components = config["pca_n_components"]
+inference_path = "inference_binaries"
+pca_n_components = 150
 
 cat_model = CatBoostClassifier()
 cat_model.load_model(path.join(inference_path, 'catboost_model.bin'))
@@ -62,13 +57,13 @@ def get_embedding(word):
     return emb
 
 # function for testing new words
-def test(word1, word2):
+def predict(word1, word2):
 
     # getting embs and lev dist
     emb1, emb2 = get_embedding(word1), get_embedding(word2)
     if emb1 is None or emb2 is None:
-        print("Для слов не нашелся эмбединг")
-        return 0
+        return "Для слов не нашелся эмбединг"
+    
     pca_emb1 = reduce_dimension(emb1.reshape(1, -1))
     pca_emb2 = reduce_dimension(emb2.reshape(1, -1))
     lev_dist = Levenshtein.distance(word1, word2)
@@ -84,16 +79,18 @@ def test(word1, word2):
     proba = max(prediction[0])
 
     # result
-    print(f"Слова {word1} и {word2} {'не '*(not res)}являются паронимами с вероятностью {proba}")
+    return f"Слова {word1} и {word2} {'не '*(not res)}являются паронимами с вероятностью {proba}"
 
-# не паронимы
-word1 = "приветливый"
-word2 = "страна"
 
-# паронимы
-# word1 = "целый"
-# word2 = "цельный"
+if __name__ == '__main__':
+    # не паронимы
+    word1 = "приветливый"
+    word2 = "страна"
 
-# тестирование
-test(word1, word2)
+    # паронимы
+    # word1 = "целый"
+    # word2 = "цельный"
+
+    # тестирование
+    predict(word1, word2)
 
