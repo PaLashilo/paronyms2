@@ -92,5 +92,5 @@ if __name__ == '__main__':
     # word2 = "цельный"
 
     # тестирование
-    predict(word1, word2)
+    print(predict(word1, word2))
 

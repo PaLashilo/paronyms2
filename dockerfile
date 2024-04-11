@@ -11,7 +11,8 @@ COPY Data/paronym.csv /home/Data
 
 COPY requirements.txt /home/
 
-RUN python3 -m pip install -r requirements.txt
+python3 -m pip install --upgrade pip setuptools
+RUN python3 -m pip install -v -r requirements.txt
 RUN python3 ./train.py
 
 EXPOSE 80
