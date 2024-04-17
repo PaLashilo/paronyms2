@@ -6,6 +6,7 @@
     "bins_directory": "inference_binaries",
 
     "pca_n_components": 150,
+    "test_size": 0.2,
 
     "nn": {
         "treshold": 0.5,
