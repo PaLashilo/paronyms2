@@ -64,7 +64,7 @@ def predict(word_pair: dict):
     :return: predicted result
     """
     model_data = ClassificationModel(**word_pair)
-    prediction = inference.predict(urllib.parse.unquote(model_data.word1),  urllib.parse.unquote(model_data.word2))
+    prediction = inference.predict(urllib.parse.unquote(model_data.word1), urllib.parse.unquote(model_data.word2))
     return {
         "prediction": prediction
     }
