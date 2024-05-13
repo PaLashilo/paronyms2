@@ -1,7 +1,8 @@
 {
     "logging": 0, 
 
-    "data_path": "Data//paronym.csv",
+    "data_path": "Data/paronym.csv",
+    "data_path_without_repeats": "Data/only_paronyms.csv",
     "data_url": "https://ru-paronym.ru",
     "bins_directory": "inference_binaries",
 
